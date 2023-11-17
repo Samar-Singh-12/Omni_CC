@@ -7,15 +7,7 @@ from modules.matrix import *
 from modules.date_calc import *
 from modules.arithmetic import *
 from modules.BMI_calc import *
-from modules.unit_convertor.digital_storage_conv import *
-from modules.unit_convertor.height_conv import *
-from modules.unit_convertor.length_conv import *
-from modules.unit_convertor.speed_conv import *
-from modules.unit_convertor.mass_conv import *
-from modules.unit_convertor.area_conv import *
-from modules.unit_convertor.volume_conv import *
-from modules.unit_convertor.pressure_conv import *
-from modules.unit_convertor.temperature_conv import *
+from modules.unit_converter import *
 
 
 if __name__ == "__main__":
