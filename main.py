@@ -7,7 +7,7 @@ from modules.matrix import *
 from modules.date_calc import *
 from modules.arithmetic import *
 from modules.BMI_calc import *
-from modules.unit_convertor.data_conv import *
+from modules.unit_convertor.digital_storage_conv import *
 from modules.unit_convertor.height_conv import *
 from modules.unit_convertor.length_conv import *
 from modules.unit_convertor.speed_conv import *
@@ -314,7 +314,7 @@ if __name__ == "__main__":
         # Taking choice input
         category_inp = inputMenu(
             [
-                "Storage Units Converter",
+                "Digital Storage Converter",
                 "Height Convertor",
                 "Length Convertor",
                 "Speed Converter",
@@ -332,11 +332,11 @@ if __name__ == "__main__":
         internal_loop = "yes"
         while internal_loop == "yes":
             # Calculator for Storage Unit Conversion
-            if category_inp == "Storage Units Converter":
+            if category_inp == "Digital Storage Converter":
                 print(
-                    "-----x-----x-----x-----Data Conversion©-----x-----x-----x-----\n"
+                    "-----x-----x-----x-----Digital Storage Conversion©-----x-----x-----x-----\n"
                 )
-                packed = data_conv()
+                packed = digital_storage_conv()
                 print_ot(packed)
 
             # Calculator for Height Conversion

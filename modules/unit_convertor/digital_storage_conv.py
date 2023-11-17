@@ -2,7 +2,7 @@ from modules.unit_convertor.unit_conv_base import *
 
 
 # Function for all required Data conversion
-def data_conv(*args):
+def digital_storage_conv(*args):
     units = {
         "Bits": 8589934592,
         "Bytes": 1073741824,
