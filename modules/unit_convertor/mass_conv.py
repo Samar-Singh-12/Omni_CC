@@ -2,7 +2,7 @@ from modules.unit_convertor.unit_conv_base import *
 
 
 # Funtion for all required Weight conversion
-def weight_conv(*args):
+def mass_conv(*args):
     units = {
         "Miligrams": 1000000,
         "Carats": 5000,

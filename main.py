@@ -11,7 +11,7 @@ from modules.unit_convertor.data_conv import *
 from modules.unit_convertor.height_conv import *
 from modules.unit_convertor.length_conv import *
 from modules.unit_convertor.speed_conv import *
-from modules.unit_convertor.weight_conv import *
+from modules.unit_convertor.mass_conv import *
 from modules.unit_convertor.area_conv import *
 from modules.unit_convertor.volume_conv import *
 from modules.unit_convertor.pressure_conv import *
@@ -318,7 +318,7 @@ if __name__ == "__main__":
                 "Height Convertor",
                 "Length Convertor",
                 "Speed Converter",
-                "Weight Convertor",
+                "Mass Convertor",
                 "Area Convertor",
                 "Volume Converter",
                 "Pressure Converter",
@@ -372,12 +372,12 @@ if __name__ == "__main__":
                 packed = speed_conv()
                 print_ot(packed)
 
-            # Calculator for Weight Conversion
-            elif category_inp == "Weight Convertor":
+            # Calculator for Mass Conversion
+            elif category_inp == "Mass Convertor":
                 print(
-                    "-----x-----x-----x-----Weight Conversion©-----x-----x-----x-----\n"
+                    "-----x-----x-----x-----Mass Conversion©-----x-----x-----x-----\n"
                 )
-                packed = weight_conv()
+                packed = mass_conv()
                 print_ot(packed)
 
             # Calculator for Area Conversion
