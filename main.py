@@ -8,7 +8,7 @@ from modules.date_calc import *
 from modules.arithmetic import *
 from modules.BMI_calc import *
 from modules.unit_converter import *
-
+from modules.currency_conv import *
 
 if __name__ == "__main__":
     # Defining Calculator Category
