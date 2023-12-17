@@ -137,9 +137,6 @@ def height_conv(*args):
     return ot, value, unit_in, unit_out
 
 
-from modules.unit_convertor.unit_conv_base import *
-
-
 # Funtion for all required Weight conversion
 def mass_conv(*args):
     units = {
