@@ -3,7 +3,7 @@ from pyinputplus import inputYesNo, inputMenu, inputNum, inputInt
 from math import log
 from sys import exit
 from statistics import mean, mode, median
-from modules.matrix import *
+from modules.py_matrix import *
 from modules.date_calc import *
 from modules.arithmetic import *
 from modules.BMI_calc import *
