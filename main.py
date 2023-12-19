@@ -8,7 +8,6 @@ from modules.date_calc import *
 from modules.arithmetic import *
 from modules.BMI_calc import *
 from modules.unit_converter import *
-from modules.currency_conv import *
 
 if __name__ == "__main__":
     # Defining Calculator Category
@@ -323,11 +322,19 @@ if __name__ == "__main__":
         )
         # Looping of chosen Operation
         internal_loop = "yes"
+        counter=0
         while internal_loop == "yes":
             # Calculator for Currency Conversion
             if category_inp == "Currency Converter":
-                update_rates()
-                create_dict()
+                print(
+                    "-----x-----x-----x-----Currency Exchange Rates©-----x-----x-----x-----\n"
+                )
+                print("NOTE: This requires a stable INTERNET CONNECTION !!!")
+                if counter == 0:
+                    update_rates()
+                packed = currency_conv()
+                print_ot(packed)
+
             # Calculator for Storage Unit Conversion
             elif category_inp == "Digital Storage Converter":
                 print(
@@ -420,6 +427,8 @@ if __name__ == "__main__":
                 Executor()
                 return
 
+            counter += 1
+            
             # Continue Internal Loop or not
             internal_loop = inputYesNo(
                 f"\nDo you want to conduct {category_inp} again ? [Yes/No]:  "

@@ -1,8 +1,8 @@
 from pyinputplus import inputMenu
-
+from modules.currency_conv import *
 
 # Function for taking inputs for Unit converters
-def take_inp(units, *args):
+def take_inp(units, unit_out=None):
     unit_in = inputMenu(
         list(units.keys()),
         prompt="\nChoose Input Option from below ↓: \n",
@@ -10,8 +10,8 @@ def take_inp(units, *args):
     )
     value = input(f"Enter the Value in {unit_in}: ")
 
-    if args:
-        unit_out = args[0]
+    if unit_out:
+        pass
     else:
         unit_out = inputMenu(
             list(units.keys()),
@@ -31,7 +31,7 @@ def print_ot(packed):
 
 
 # Function for all required Area conversion
-def area_conv(*args):
+def area_conv(unit_out=None):
     units = {
         "Sq. Foot": 43560,
         "Sq. Yard": 4840,
@@ -39,8 +39,8 @@ def area_conv(*args):
         "Acres": 1,
         "Hectares": 0.404686,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
+        packed = take_inp(units, unit_out)
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
@@ -51,9 +51,22 @@ def area_conv(*args):
 
     return ot, value, unit_in, unit_out
 
+# Function for all required Currency conversion
+
+def currency_conv(unit_out=None):
+    units = create_dict()
+    if unit_out:
+        packed = take_inp(units, unit_out)
+    else:
+        packed = take_inp(units)
+    value = float(packed[0])
+    unit_in = packed[1]
+    unit_out = packed[2]
+    ot = value * (units.get(unit_out) / units.get(unit_in))
+    return ot, value, unit_in, unit_out 
 
 # Function for all required Data conversion
-def digital_storage_conv(*args):
+def digital_storage_conv(unit_out=None):
     units = {
         "Bits": 8589934592,
         "Bytes": 1073741824,
@@ -68,8 +81,7 @@ def digital_storage_conv(*args):
         #     "Tera Bits": 0.0078125,
         #     "Peta Bits": 0.00000762939453125,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
@@ -82,7 +94,7 @@ def digital_storage_conv(*args):
 
 
 # Function for all required Length conversion
-def length_conv(*args):
+def length_conv(unit_out=None):
     units = {
         "Centimeters": 100000,
         "Inches": 39370.08,
@@ -93,8 +105,7 @@ def length_conv(*args):
         "Miles": 0.621371,
         "Nautical Miles": 0.539957,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
@@ -107,7 +118,7 @@ def length_conv(*args):
 
 
 # Function for all required Height conversion
-def height_conv(*args):
+def height_conv(unit_out=None):
     units = {
         "Centimeters": 100000,
         "Inches": 39370.08,
@@ -115,8 +126,7 @@ def height_conv(*args):
         "Meters": 1000,
         "Foots'Inches": 0,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
@@ -138,7 +148,7 @@ def height_conv(*args):
 
 
 # Funtion for all required Weight conversion
-def mass_conv(*args):
+def mass_conv(unit_out=None):
     units = {
         "Miligrams": 1000000,
         "Carats": 5000,
@@ -149,8 +159,7 @@ def mass_conv(*args):
         "Stone": 0.157473,
         "Tonnes": 0.001,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
@@ -163,7 +172,7 @@ def mass_conv(*args):
 
 
 # Function for all required Pressure conversion
-def pressure_conv(*args):
+def pressure_conv(unit_out=None):
     units = {
         "Pascals": 1000,
         "mm of Hg": 7.5018,
@@ -172,8 +181,7 @@ def pressure_conv(*args):
         "Bars": 0.01,
         "Atmospheric Pressure": 0.009869,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
@@ -186,7 +194,7 @@ def pressure_conv(*args):
 
 
 # Function for all required Speed conversion
-def speed_conv(*args):
+def speed_conv(unit_out=None):
     units = {
         "Foot/Second": 0.911344,
         "Miles/Hour": 0.621427,
@@ -195,8 +203,7 @@ def speed_conv(*args):
         "Kilometers/Hour": 1,
         "Mach": 0.000816273,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
@@ -236,7 +243,7 @@ def temp_conv(value, unit_in, unit_out):
 
 
 # Function for all required Volume conversion
-def volume_conv(*args):
+def volume_conv(unit_out=None):
     units = {
         "Teaspoon (UK)": 168.9364,
         "Inch³": 61.02347,
@@ -248,8 +255,7 @@ def volume_conv(*args):
         "Yard³": 0.00130795,
         "Meter³": 0.001,
     }
-    if args:
-        unit_out = args[0]
+    if unit_out:
         packed = take_inp(units, unit_out)
     else:
         packed = take_inp(units)
