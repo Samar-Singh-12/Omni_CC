@@ -1,5 +1,5 @@
 from pyinputplus import inputMenu
-from modules.currency_conv import *
+from modules.exchange_rates import *
 
 # Function for taking inputs for Unit converters
 def take_inp(units, unit_out=None):
