@@ -6,7 +6,7 @@ import certifi
 api_url = "https://v6.exchangerate-api.com/v6/4fd120e4fbf752644f2d3019/latest/USD"
 
 # Spreadsheet
-spreadsheet_dir = "exchange_rates.xlsx"
+spreadsheet_dir = "modules/exchange_rates.xlsx"
 
 #Fetches exchange rates from API and updates & saves spreadsheet
 def update_rates():
