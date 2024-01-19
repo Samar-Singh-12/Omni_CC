@@ -9,3 +9,5 @@ pip install openpyxl
 pip install --upgrade openpyxl
 pip install certifi
 pip install --upgrade certifi
+pip install pyqt6
+pip install --upgrade pyqt6
