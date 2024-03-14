@@ -11,3 +11,5 @@ pip install certifi
 pip install --upgrade certifi
 pip install pyqt6
 pip install --upgrade pyqt6
+pip install pandas
+pip install --upgrade pandas
