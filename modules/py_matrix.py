@@ -1,4 +1,4 @@
-from pyinputplus import inputInt, inputNum
+from modules.better_input import inputInt, inputNum
 
 
 # This takes input of a Matrix (row < column < create)

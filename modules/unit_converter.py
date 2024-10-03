@@ -1,12 +1,11 @@
-from pyinputplus import inputMenu
-from modules.exchange_rates import *
+from modules.better_input import inputMenu
+from modules.exchange_rates import *    
 
 # Function for taking inputs for Unit converters
 def take_inp(units, unit_out=None):
     unit_in = inputMenu(
         list(units.keys()),
-        prompt="\nChoose Input Option from below ↓: \n",
-        numbered=True,
+        prompt="\nChoose Input Option from ↑: "
     )
     value = input(f"Enter the Value in {unit_in}: ")
 
@@ -15,7 +14,7 @@ def take_inp(units, unit_out=None):
     else:
         unit_out = inputMenu(
             list(units.keys()),
-            prompt="\nChoose Output Option from below ↓: \n",
+            prompt="\nChoose Output Option from ↑: ",
             numbered=True,
         )
     return value, unit_in, unit_out
@@ -75,11 +74,11 @@ def digital_storage_conv(unit_out=None):
         "Giga Bytes": 1,
         "Tera Bytes": 0.0009765625,
         "Peta Bytes": 0.00000095367431640625,
-        #     "Kilo Bits": 8388608,
-        #     "Mega Bits": 8192,
-        #     "Giga Bits": 8,
-        #     "Tera Bits": 0.0078125,
-        #     "Peta Bits": 0.00000762939453125,
+        "Kilo Bits": 8388608,
+        "Mega Bits": 8192,
+        "Giga Bits": 8,
+        "Tera Bits": 0.0078125,
+        "Peta Bits": 0.00000762939453125,
     }
     if unit_out:
         packed = take_inp(units, unit_out)

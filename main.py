@@ -1,5 +1,4 @@
 # Importing Necessary Packages
-from pyinputplus import inputYesNo, inputMenu, inputNum, inputInt
 from math import log
 from sys import exit
 from statistics import mean, mode, median
@@ -8,6 +7,7 @@ from modules.date_calc import *
 from modules.arithmetic import *
 from modules.BMI_calc import *
 from modules.unit_converter import *
+from modules.better_input import *
 
 if __name__ == "__main__":
     # Defining Calculator Category
@@ -28,12 +28,11 @@ if __name__ == "__main__":
                 "Date Calculator",
                 "Go Back",
             ],
-            prompt="\nConduct any Operation from Below ↓ Choose: \n",
-            numbered=True,
+            prompt="\nConduct any Operation from ↑ Choose: ",
         )
         # Looping of chosen Operation
-        internal_loop = "yes"
-        while internal_loop == "yes":
+        internal_loop = True
+        while internal_loop:
             # Basic Arithmetic Operations :-
             if category_inp == "+/-/÷/× Calculator":
                 print(
@@ -41,9 +40,7 @@ if __name__ == "__main__":
                 )
                 num_1 = inputNum("Enter number 1 : ")
                 choice = inputMenu(
-                    ["+", "-", "*", "/"],
-                    prompt="Choose any Operation from below ↓: \n",
-                    numbered=True,
+                    ["+", "-", "*", "/"], prompt="Choose any Operation from ↑: "
                 )
                 num_2 = inputNum("Enter number 2 : ")
                 sol = arithmetic(num_1, num_2, choice)
@@ -54,9 +51,7 @@ if __name__ == "__main__":
                     "-----x-----x-----x-----Power & Root Calculator©-----x-----x-----x-----\n"
                 )
                 choice = inputMenu(
-                    ["Power", "Root"],
-                    prompt="Choose any one from below ↓: \n",
-                    numbered=True,
+                    ["Power", "Root"], prompt="Choose any one from ↑: "
                 )
                 if choice == "Power":
                     print("xⁿ or nth power of x")
@@ -86,8 +81,7 @@ if __name__ == "__main__":
                 print("-----x-----x-----x-----Log Calculator©-----x-----x-----x-----\n")
                 choice = inputMenu(
                     ["Natural log (ln)", "Base 10 (log)"],
-                    prompt="log should be ? ↓: \n",
-                    numbered=True,
+                    prompt="log should be ? ↑: ",
                 )
                 value = inputNum("\nEnter the value: ")
                 dict_values = {"Natural log (ln)": 2.7182818, "Base 10 (log)": 10}
@@ -104,9 +98,7 @@ if __name__ == "__main__":
                 values = input("Enter Numbers seperated by commas: ")
                 list_in = [int(i) for i in values.split(",")]
                 choice = inputMenu(
-                    ["+", "-", "*"],
-                    prompt="Choose any Operation from below ↓: \n",
-                    numbered=True,
+                    ["+", "-", "*"], prompt="Choose any Operation from ↑: "
                 )
                 if choice == "+":
                     sol = sum(list_in)
@@ -131,8 +123,7 @@ if __name__ == "__main__":
                 mb = matrix_takein("B")
                 choice = inputMenu(
                     ["Addition", "Subtraction", "Multiplication"],
-                    prompt="\nConduct any Operation from Below ↓ Choose: \n",
-                    numbered=True,
+                    prompt="\nConduct any Operation from ↑ Choose: ",
                 )
                 if choice == "Addition":
                     matrix_combo(ma, mb, "+")
@@ -161,8 +152,7 @@ if __name__ == "__main__":
                 list_in = [float(i) for i in values.split(",")]
                 choice = inputMenu(
                     ["mean", "mode", "median", "all"],
-                    prompt="Choose any Operation from below ↓: \n",
-                    numbered=True,
+                    prompt="Choose any Operation from ↑: ",
                 )
                 mean_sol = f"\nMean of the data: {mean(list_in):.2f}"
                 mode_sol = f"\nMode of the data: {mode(list_in):.2f}"
@@ -204,8 +194,7 @@ if __name__ == "__main__":
                     value = inputNum("\nEnter the Value: ")
                     int_choice = inputMenu(
                         ["Increase", "Decrease"],
-                        prompt="Choose any one from below ↓: \n",
-                        numbered=True,
+                        prompt="Choose any one from ↑: ",
                     )
                     percent = inputNum("Enter the Percentage: ")
                     if int_choice.lower() == "increase":
@@ -222,8 +211,7 @@ if __name__ == "__main__":
                 )
                 choice = inputMenu(
                     ["Kilograms", "Pounds"],
-                    prompt="Choose Input Option from below ↓: \n",
-                    numbered=True,
+                    prompt="Choose Input Option from ↑: ",
                 )
                 weight_in = inputNum(f"\nEnter your weight in {choice}:  ")
 
@@ -240,8 +228,7 @@ if __name__ == "__main__":
                 )
                 choice = inputMenu(
                     ["Simple Interest", "Compound Interest", "Both"],
-                    prompt="Choose any one from below ↓: \n",
-                    numbered=True,
+                    prompt="Choose any one from ↑: ",
                 )
                 principle = inputNum("\nEnter Principal Balance: ")
                 rate = inputNum("Enter Annual Interest Rate: ")
@@ -269,8 +256,7 @@ if __name__ == "__main__":
                 )
                 choice = inputMenu(
                     ["Difference Between Dates", "Addition of data to a Date"],
-                    prompt="Choose any one Option from below ↓: \n",
-                    numbered=True,
+                    prompt="Choose any one Option from ↑: ",
                 )
                 if choice == "Difference Between Dates":
                     start_date = input(
@@ -295,7 +281,7 @@ if __name__ == "__main__":
             internal_loop = inputYesNo(
                 f"\nDo you want to conduct {category_inp} again ? [Yes/No]:  "
             )
-            if internal_loop == "yes":
+            if internal_loop:
                 continue
             else:
                 break
@@ -317,13 +303,12 @@ if __name__ == "__main__":
                 "Temperature Convertor",
                 "Go Back",
             ],
-            prompt="\nConduct any Operation from Below ↓ Choose: \n",
-            numbered=True,
+            prompt="\nConduct any Operation from ↑ Choose: ",
         )
         # Looping of chosen Operation
-        internal_loop = "yes"
-        counter=0
-        while internal_loop == "yes":
+        internal_loop = True
+        counter = 0
+        while internal_loop:
             # Calculator for Currency Conversion
             if category_inp == "Currency Converter":
                 print(
@@ -428,12 +413,12 @@ if __name__ == "__main__":
                 return
 
             counter += 1
-            
+
             # Continue Internal Loop or not
             internal_loop = inputYesNo(
                 f"\nDo you want to conduct {category_inp} again ? [Yes/No]:  "
             )
-            if internal_loop == "yes":
+            if internal_loop:
                 continue
             else:
                 break
@@ -443,12 +428,11 @@ if __name__ == "__main__":
         # Taking input
         main_inp = inputMenu(
             ["Calculators", "Unit Converters", "Exit Code"],
-            prompt="\nAccess Calculators or Unit Convertors ? Choose from below ↓: \n\n",
-            numbered=True,
+            prompt="\nAccess Calculators or Unit Convertors ? Choose from ↑: ",
         )
         # Looping of chosen Category
-        category_loop = "yes"
-        while category_loop == "yes":
+        category_loop = True
+        while category_loop:
             if main_inp == "Calculators":
                 Calculator()
             elif main_inp == "Unit Converters":
@@ -463,7 +447,7 @@ if __name__ == "__main__":
             category_loop = inputYesNo(
                 f"\nDo you want to conduct an operation in the {main_inp} Category? [Yes/No]: "
             )
-            if category_loop == "yes":
+            if category_loop:
                 continue
             else:
                 return
@@ -474,15 +458,15 @@ if __name__ == "__main__":
     )
 
     # Looping of Code
-    choice_loop = "yes"
-    while choice_loop == "yes":
+    choice_loop = True
+    while choice_loop:
         Executor()
 
         # Continue Main Loop or not
         choice_loop = inputYesNo(
             "\nDo you want to access another Category ? [Yes/No]: "
         )
-        if choice_loop == "yes":
+        if choice_loop:
             continue
         else:
             print(
