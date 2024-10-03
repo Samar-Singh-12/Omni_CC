@@ -11,7 +11,10 @@ def bmi_calc(weight, height):
     elif bmi > 25:
         body_status, body_status_identifier = "Over Weight !", over
     elif bmi > 18.5:
-        body_status, body_status_identifier = "Healthy !", "Maintain this Weight and you'll be good !"
+        body_status, body_status_identifier = (
+            "Healthy !",
+            "Maintain this Weight and you'll be good !",
+        )
     else:
         body_status, body_status_identifier = "Under Weight !", under
     print(f"Your BMI is {bmi:.2f} & you're {body_status}")

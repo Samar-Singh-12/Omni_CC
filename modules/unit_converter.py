@@ -1,12 +1,10 @@
 from modules.better_input import inputMenu
-from modules.exchange_rates import *    
+from modules.exchange_rates import *
+
 
 # Function for taking inputs for Unit converters
 def take_inp(units, unit_out=None):
-    unit_in = inputMenu(
-        list(units.keys()),
-        prompt="\nChoose Input Option from ↑: "
-    )
+    unit_in = inputMenu(list(units.keys()), prompt="\nChoose Input Option from ↑: ")
     value = input(f"Enter the Value in {unit_in}: ")
 
     if unit_out:
@@ -50,7 +48,9 @@ def area_conv(unit_out=None):
 
     return ot, value, unit_in, unit_out
 
+
 # Function for all required Currency conversion
+
 
 def currency_conv(unit_out=None):
     units = create_dict()
@@ -62,7 +62,8 @@ def currency_conv(unit_out=None):
     unit_in = packed[1]
     unit_out = packed[2]
     ot = value * (units.get(unit_out) / units.get(unit_in))
-    return ot, value, unit_in, unit_out 
+    return ot, value, unit_in, unit_out
+
 
 # Function for all required Data conversion
 def digital_storage_conv(unit_out=None):

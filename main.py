@@ -50,9 +50,7 @@ if __name__ == "__main__":
                 print(
                     "-----x-----x-----x-----Power & Root Calculator©-----x-----x-----x-----\n"
                 )
-                choice = inputMenu(
-                    ["Power", "Root"], prompt="Choose any one from ↑: "
-                )
+                choice = inputMenu(["Power", "Root"], prompt="Choose any one from ↑: ")
                 if choice == "Power":
                     print("xⁿ or nth power of x")
                     value = inputNum("Enter Base (x): ")
